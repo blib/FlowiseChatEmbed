@@ -1,14 +1,14 @@
 import { createSignal, createEffect, For, onMount } from 'solid-js'
-import { sendMessageQuery, isStreamAvailableQuery, IncomingInput } from '@/queries/sendMessageQuery'
+import { sendMessageQuery, isStreamAvailableQuery, IncomingInput } from '../queries/sendMessageQuery'
 import { TextInput } from './inputs/textInput'
 import { GuestBubble } from './bubbles/GuestBubble'
 import { BotBubble } from './bubbles/BotBubble'
 import { LoadingBubble } from './bubbles/LoadingBubble'
 import { SourceBubble } from './bubbles/SourceBubble'
-import { BotMessageTheme, TextInputTheme, UserMessageTheme } from '@/features/bubble/types'
+import { BotMessageTheme, TextInputTheme, UserMessageTheme } from '../features/bubble/types'
 import { Badge } from './Badge'
 import socketIOClient from 'socket.io-client'
-import { Popup } from '@/features/popup'
+import { Popup } from '../features/popup'
 
 type messageType = 'apiMessage' | 'userMessage' | 'usermessagewaiting'
 
@@ -31,7 +31,7 @@ export type BotProps = {
     fontSize?: number
 }
 
-const defaultWelcomeMessage = 'Hi there! How can I help?'
+const defaultWelcomeMessage = 'Привет, расскажи в какой ситуации ты находишься?'
 
 /*const sourceDocuments = [
     {
@@ -227,7 +227,7 @@ export const Bot = (props: BotProps & { class?: string }) => {
             const error = result.error
             console.error(error)
             const err: any = error
-            const errorData = typeof err === 'string'? err :err.response.data || `${err.response.status}: ${err.response.statusText}`
+            const errorData = typeof err === 'string' ? err : err.response.data || `${err.response.status}: ${err.response.statusText}`
             handleError(errorData)
             return
         }

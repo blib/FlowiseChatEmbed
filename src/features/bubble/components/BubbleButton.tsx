@@ -1,5 +1,5 @@
 import { Show } from 'solid-js'
-import { isNotDefined } from '@/utils/index'
+import { isNotDefined } from '../../../utils/index'
 import { ButtonTheme } from '../types'
 
 type Props = ButtonTheme & {

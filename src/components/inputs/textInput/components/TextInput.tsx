@@ -1,6 +1,6 @@
 import { ShortTextInput } from './ShortTextInput'
-import { SendButton } from '@/components/SendButton'
-import { isMobile } from '@/utils/isMobileSignal'
+import { SendButton } from '../../../../components/SendButton'
+import { isMobile } from '../../../../utils/isMobileSignal'
 import { createSignal, onMount } from 'solid-js'
 
 type Props = {
@@ -63,7 +63,7 @@ export const TextInput = (props: Props) => {
                 fontSize={props.fontSize}
                 placeholder={props.placeholder ?? 'Type your question'}
             />
-            <SendButton sendButtonColor={props.sendButtonColor} type='button' isDisabled={inputValue() === ''} class='my-2 ml-2' on:click={submit}>
+            <SendButton sendButtonColor={props.sendButtonColor} type='button' isDisabled={inputValue() === ''} class='my-2 ml-2' onClick={submit}>
                 <span style={{ 'font-family': 'Poppins, sans-serif' }}>Send</span>
             </SendButton>
         </div>

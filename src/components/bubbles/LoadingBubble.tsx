@@ -1,4 +1,4 @@
-import { TypingBubble } from '@/components'
+import { TypingBubble } from '../../components'
 
 export const LoadingBubble = () => (
   <div

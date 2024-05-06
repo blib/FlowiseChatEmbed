@@ -1,5 +1,5 @@
-import { MessageType } from '@/components/Bot'
-import { sendRequest } from '@/utils/index'
+import { MessageType } from '../components/Bot'
+import { sendRequest } from '../utils/index'
 
 export type IncomingInput = {
     question: string
